@@ -34,29 +34,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               TextField(
-                decoration: InputDecoration(labelText: "Name"),
+                decoration: InputDecoration(
+                    labelText: "Name",
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Email"),
+                decoration: InputDecoration(
+                    labelText: "Email",
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Phone"),
+                decoration: InputDecoration(
+                    labelText: "Phone",
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Delivery Address"),
+                decoration: InputDecoration(
+                    labelText: "Delivery Address",
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Shop Name"),
+                decoration: InputDecoration(
+                    labelText: "Shop Name",
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
               ),
               // TextField(),
               Container(
                 height: 50,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Text(
-                      "Postal Code -    ",
-                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                      "Postal Code -   ",
+                      style: TextStyle(fontSize: 16, color: Colors.black54),
                     ),
                     DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
@@ -76,7 +86,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         }).toList(),
                       ),
                     ),
-                    Text("1111111")
+                    Text(
+                      "1111111",
+                      style: TextStyle(color: Colors.black54),
+                    )
                   ],
                 ),
               ),
@@ -85,17 +98,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 color: Colors.black,
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Password"),
+                decoration: InputDecoration(
+                    labelText: "Password",
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
               ),
               TextField(
-                decoration: InputDecoration(labelText: "Confirm Password"),
+                decoration: InputDecoration(
+                    labelText: "Confirm Password",
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
               ),
               SizedBox(
                 height: 20,
               ),
               FlatButton(
                 color: Colors.red,
-                child: Text("Summit"),
+                child: Text(
+                  "SUMMIT",
+                  style: TextStyle(color: Colors.white),
+                ),
                 onPressed: () => print("Register Acc"),
               )
             ],

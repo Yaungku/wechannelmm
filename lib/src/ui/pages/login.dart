@@ -26,7 +26,10 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Center(
-            child: Text("Login"),
+            child: Text(
+              "Login",
+              style: TextStyle(color: Colors.black),
+            ),
           ),
         ),
         body: Padding(
@@ -44,22 +47,32 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 space20(),
                 TextField(
-                  decoration: InputDecoration(labelText: "User Name"),
+                  decoration: InputDecoration(
+                      labelText: "User Name",
+                      contentPadding: EdgeInsets.symmetric(horizontal: 10)),
                 ),
                 space10(),
                 TextField(
-                  decoration: InputDecoration(labelText: "Password"),
+                  decoration: InputDecoration(
+                      labelText: "Password",
+                      contentPadding: EdgeInsets.symmetric(horizontal: 10)),
                 ),
                 space20(),
                 FlatButton(
-                  child: Text("LOGIN"),
+                  child: Text(
+                    "LOGIN",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   color: Colors.red,
                   onPressed: () =>
                       Navigator.pushNamed(context, HomeScreen.routeName),
                 ),
                 space10(),
                 FlatButton(
-                  child: Text("REGISTER"),
+                  child: Text(
+                    "REGISTER",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   color: Colors.red,
                   onPressed: () =>
                       Navigator.pushNamed(context, RegisterScreen.routeName),

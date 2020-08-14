@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wechannelmm/src/ui/widgets/space.dart';
+import 'package:wechannelmm/src/ui/widgets/textfield.dart';
 
 var towns = [
   "Ahlone",
@@ -28,37 +30,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
         child: Container(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.start,
+          child: ListView(
             children: <Widget>[
-              TextField(
-                decoration: InputDecoration(
-                    labelText: "Name",
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    labelText: "Email",
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    labelText: "Phone",
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    labelText: "Delivery Address",
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    labelText: "Shop Name",
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
-              ),
-              // TextField(),
+              customtextfield("Name"),
+              customtextfield("Email"),
+              customtextfield("Phone"),
+              customtextfield("Delivery Address"),
+              customtextfield("Shop Name"),
               Container(
                 height: 50,
                 child: Row(
@@ -97,19 +75,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 height: 10,
                 color: Colors.black,
               ),
-              TextField(
-                decoration: InputDecoration(
-                    labelText: "Password",
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    labelText: "Confirm Password",
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10)),
-              ),
-              SizedBox(
-                height: 20,
-              ),
+              customtextfield("Password"),
+              customtextfield("Confirm Password"),
+              customtextfield("Shop Name"),
+              space20(),
               FlatButton(
                 color: Colors.red,
                 child: Text(

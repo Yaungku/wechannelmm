@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wechannelmm/src/ui/pages/home.dart';
 import 'package:wechannelmm/src/ui/pages/register.dart';
+import 'package:wechannelmm/src/ui/widgets/space.dart';
+import 'package:wechannelmm/src/ui/widgets/textfield.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = '/';
@@ -9,18 +11,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  space10() {
-    return SizedBox(
-      height: 10,
-    );
-  }
-
-  space20() {
-    return SizedBox(
-      height: 20,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,10 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 40),
           child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            child: ListView(
               children: <Widget>[
                 Container(
                   width: 150,
@@ -46,17 +33,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Image.asset("assets/images/wechannelmm.png"),
                 ),
                 space20(),
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: "User Name",
-                      contentPadding: EdgeInsets.symmetric(horizontal: 10)),
-                ),
+                customtextfield("User Name"),
                 space10(),
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: "Password",
-                      contentPadding: EdgeInsets.symmetric(horizontal: 10)),
-                ),
+                customtextfield("Password"),
                 space20(),
                 FlatButton(
                   child: Text(

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:wechannelmm/src/ui/pages/history.dart';
+import 'package:wechannelmm/src/ui/pages/profile.dart';
+import 'package:wechannelmm/src/ui/pages/shoppingcart.dart';
 import 'package:wechannelmm/src/ui/widgets/itemcontainer.dart';
+import 'package:wechannelmm/src/ui/widgets/space.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/home';
@@ -8,18 +12,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  space10() {
-    return SizedBox(
-      height: 10,
-    );
-  }
-
-  space20() {
-    return SizedBox(
-      height: 20,
-    );
-  }
-
   item1() {
     return ItemContainer(
       image: "assets/images/2in1.png",
@@ -46,13 +38,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
+    final double itemWidth = size.width / 2;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: Icon(
+            Icons.settings,
+          ),
+          onPressed: () => Navigator.pushNamed(context, ProfilePage.routeName),
+        ),
         title: Text("WeChannel"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.timer),
             onPressed: () {
+              Navigator.pushNamed(context, HistoryPage.routeName);
               print("Pressed history");
             },
           ),
@@ -60,7 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(
               Icons.shopping_cart,
             ),
-            onPressed: () => print("Shop"),
+            onPressed: () =>
+                Navigator.pushNamed(context, ShopCartPage.routeName),
           )
         ],
       ),
@@ -94,15 +98,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(fontSize: 18),
                         ),
                       )),
-                  space10(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[item1(), item2()],
-                  ),
-                  space10(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[item3()],
+                  GridView.count(
+                    padding: const EdgeInsets.all(10),
+                    shrinkWrap: true,
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
+                    childAspectRatio: (itemWidth / itemHeight),
+                    children: [item1(), item2(), item3()],
                   )
                 ],
               ))
